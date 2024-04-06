@@ -22,13 +22,13 @@ func NewEmptyAuthClaim() *authClaim {
 	return &authClaim{}
 }
 
-type registeredClaimInput struct {
+type RegisteredClaimInput struct {
 	Issuer    string
 	Subject   string
 	ExpiresAt time.Time
 }
 
-func NewRegisteredClaim(claimInput *registeredClaimInput) *jwt.RegisteredClaims {
+func NewRegisteredClaim(claimInput *RegisteredClaimInput) *jwt.RegisteredClaims {
 	return &jwt.RegisteredClaims{
 		ID:        time.Now().String(),
 		Issuer:    "Server",
